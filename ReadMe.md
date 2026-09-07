@@ -1,0 +1,1 @@
+This IT202 Assignments folder contains multiple folders for each assignment.
