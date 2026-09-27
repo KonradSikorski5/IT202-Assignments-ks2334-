@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>UCID Validation</title>
+<script>
+function validateUCID() {
+    var ucid = document.getElementById("ucid").value;
+    var pattern = /^[A-Za-z]+[0-9]{0,3}$/;
+    var validUCIDs = ["rad7", "mad", "jd45", "abc123"];
+
+    if (pattern.test(ucid)) {
+        if (validUCIDs.includes(ucid)) {
+            alert("VALID UCID FORMAT AND UCID FOUND!");
+        }
+        else {
+            alert("VALID UCID FORMAT BUT INVALID UCID!");
+        }
+    }
+    else {
+        alert("UCID DOES NOT CONFORM TO VALID FORMAT! RE-ENTER");
+    }
+}
+</script>
+</head>
+<body>
+<form>
+    <input type="text" id="ucid" name="ucid" placeholder="Enter UCID"
+           title="A UCID is a sequence of letters followed by zero to three digits.">
+    <label for="ucid">UCID</label>
+    <br><br>
+    <input type="button" value="Submit" onclick="validateUCID()">
+</form>
+</body>
+</html>
