@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Verify Email</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+$("#confirm").click(function()
+{
+var email1 = $("#email1").val();
+var email2 = $("#email2").val();
+
+$("#msg1").html("*");
+$("#msg2").html("*");
+
+if (email1 == "" || email2 == "")
+{
+if (email1 == "")
+{
+$("#msg1").html("This field is required.");
+}
+if (email2 == "")
+{
+$("#msg2").html("This field is required.");
+}
+}
+else if (email1 != email2)
+{
+$("#msg2").html("The email addresses must match.");
+}
+else
+{
+alert("Email confirmation successful");
+}
+});
+});
+</script>
+</head>
+<body>
+<h1>Please verify your email address</h1>
+<form>
+<label>Email Address:</label>
+<input type="text" id="email1">
+<span id="msg1">*</span>
+<br>
+<label>Confirm Email Address:</label>
+<input type="text" id="email2">
+<span id="msg2">*</span>
+<br>
+<input type="button" id="confirm" value="Confirm">
+</form>
+</body>
+</html>
